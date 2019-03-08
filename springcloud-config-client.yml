@@ -1,29 +1,26 @@
-#配置模式
-spring: 
+spring:
   profiles:
     active:
-    -  dev
-
+      - dev
 ---
 server:
   port: 8201
 spring:
-  profiles: dev #开发环境
+  profile: dev
   application:
-    name: springcloud-config-client
+      name: springcloud-config-client
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-dev:7001/eureka/
-
+      defaultZone: http://eureka-dev.com:7001/eureka/
 ---
 server:
   port: 8202
 spring:
-  profiles: test #开发环境
+  profiles: test
   application:
-    name: springcloud-config-client
+    name:  springcloud-config-client
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-test:7001/eureka/
+        defaultZone:  http://eureka-test.com:7001/eureka/
